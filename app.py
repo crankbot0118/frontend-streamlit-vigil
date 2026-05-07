@@ -10,4 +10,4 @@ with action_box:
 
 with output_box:
     st.title("output")
-    txt=st.text_area("andncnsndjncjsdnclw")
+    st.code("adcbjs cjnqec", language="bash")
