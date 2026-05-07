@@ -11,5 +11,6 @@ with action_box:
     st.button("Run", type="primary")
 
 with output_box:
-    st.title("output")
-    st.code("adcbjs cjnqec", language="bash")
+    with st.container(height=600):
+        st.title("output")
+        st.code("adcbjs cjnqec", language="bash")
