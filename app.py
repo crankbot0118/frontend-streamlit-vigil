@@ -12,4 +12,6 @@ with action_box:
 
 with output_box:
         st.title("output")
-        st.code("adcbjs cjnqec", language="bash")
+        container = st.container(height=600,border=False)
+        with container:
+            st.code("output", language="bash")
