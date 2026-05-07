@@ -7,6 +7,8 @@ action_box,output_box=st.columns(2,border=True)
 
 with action_box:
     task_select=st.selectbox("Select Task","pre_health_checks",width="stretch")
+    instance_select=st.selectbox("Select Instance","pre_health_checks",width="stretch")
+    st.button("Run", type="primary")
 
 with output_box:
     st.title("output")
