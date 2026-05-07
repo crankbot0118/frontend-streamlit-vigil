@@ -12,11 +12,8 @@ st.title("POC Concept for Vigil")
 #     st.title("output")
 #     st.code("adcbjs cjnqec", language="bash")
 
-vertical_alignment = st.selectbox(
-    "Vertical alignment", ["top", "center", "bottom"], index=2
-)
 
-left, middle, right = st.columns(3, vertical_alignment=vertical_alignment)
+left, middle, right = st.columns([1,1,1], vertical_alignment="bottom")
 
 left.text_input("Write something")
 middle.button("Click me", use_container_width=True)
