@@ -24,7 +24,7 @@ import streamlit as st
 st.set_page_config(layout="wide")
 
 # Create 3 vertical columns
-col1, col2, col3 = st.columns(3, Vertical_Alignment="bottom")
+col1, col2, col3 = st.columns(3, vertical_alignment="bottom")
 
 with col1:
     st.subheader("CPU")
