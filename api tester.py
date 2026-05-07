@@ -8,7 +8,7 @@ with st.form("my_form"):
     submitted = st.form_submit_button("Submit")
     
     if submitted:
-        url = "https://your-api-endpoint.com"
+        url = "https://54.198.10.240:8000"
         payload = {"message": user_input}
         
         # Sending the POST request
