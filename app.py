@@ -14,4 +14,4 @@ with output_box:
         st.title("output")
         container = st.container(height=600,border=False)
         with container:
-            st.code("output", language="bash",height="strecth")
+            st.code("output", language="bash",height="stretch")
