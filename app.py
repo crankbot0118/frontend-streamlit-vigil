@@ -9,12 +9,22 @@ output = ""
 action_box,output_box=st.columns(2,border=True)
 
 with action_box:
-    task_select=st.selectbox("Select Task","pre_health_checks",width="stretch")
-    instance_select=st.selectbox("Select Instance",("cust_instance1","cust_instance2"),width="stretch")
+    task_select=st.selectbox(
+        "Select Task",
+        ("pre_health_checks",),
+        width="stretch"
+    )
+
+    instance_select=st.selectbox(
+        "Select Instance",
+        ("cust_instance1","cust_instance2"),
+        width="stretch"
+    )
     
     run_clicked = st.button("Run", type="primary")
 
     if run_clicked:
+
         url = "http://54.198.10.240:8000/tasks/pre-health-check/execute"
 
         payload = {
@@ -24,18 +34,35 @@ with action_box:
 
         response = requests.post(url, json=payload)
 
+        data = response.json()
+
         if response.status_code == 200:
-            output = response.json()["output"]
+
+            output = data.get(
+                "output",
+                data.get("error", "Unknown Error")
+            )
+
             st.success("Data sent successfully!")
 
         else:
+
             output = f"Failed to send data: {response.status_code}"
+
             st.error(output)
 
 with output_box:
+
     st.title("output")
 
-    container = st.container(height=600,border=False)
+    container = st.container(
+        height=600,
+        border=False
+    )
 
     with container:
-        st.code(output, language="bash")
+
+        st.code(
+            output,
+            language="bash"
+        )
