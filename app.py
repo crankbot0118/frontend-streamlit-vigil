@@ -21,18 +21,8 @@
 
 import streamlit as st
 
-# Main content
-st.write("Main Application Content")
-st.write("...")
+col1, col2 = st.columns(2)
 
-# Create a container at the bottom
-with st.container():
-    st.write("---") # Optional separator
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.button("Back")
-    with col2:
-        st.write("Footer Content")
-    with col3:
-        st.button("Next")
+with col1:
+    st.write("Top of Column 1")
+    st.button("Bottom of Column 1")
