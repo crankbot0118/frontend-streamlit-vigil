@@ -13,7 +13,7 @@ st.title("POC Concept for Vigil")
 #     st.code("adcbjs cjnqec", language="bash")
 
 
-left, middle, right = st.columns([1,1,1], vertical_alignment="bottom")
+left, middle, right = st.columns(3)
 
 left.text_input("Write something")
 middle.button("Click me", use_container_width=True)
